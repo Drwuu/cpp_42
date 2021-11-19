@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:40:07 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/19 16:35:24 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/19 19:09:51 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Zombie
 {
 private:
-	std::string		name;
+	std::string	_name;
 public:
 	Zombie(std::string name);
 	~Zombie();

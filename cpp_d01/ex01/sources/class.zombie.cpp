@@ -6,24 +6,32 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 16:32:49 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/19 17:57:23 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/19 19:11:52 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/class.zombie.hpp"
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie()
 {
-	this->name = name;
-	announce();
 }
 
 Zombie::~Zombie()
 {
-	std::cout << "Zombie: " << this->name << " died\n";
+	std::cout << "Zombie: " << this->_name << " died\n";
+}
+
+std::string	Zombie::getName() const
+{
+	return this->_name;
+}
+
+void	Zombie::setName(std::string name)
+{
+	this->_name = name;
 }
 
 void	Zombie::announce()
 {
-	std::cout << "<" << this->name << "> BraiiiiiiinnnzzzZ...\n";
+	std::cout << "<" << this->_name << "> BraiiiiiiinnnzzzZ...\n";
 }
