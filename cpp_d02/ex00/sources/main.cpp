@@ -5,33 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/13 19:00:09 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/23 14:11:48 by lwourms          ###   ########.fr       */
+/*   Created: 2021/11/22 15:32:29 by lwourms           #+#    #+#             */
+/*   Updated: 2021/11/23 16:01:34 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/class.phonebook.hpp"
+#include "../headers/class.fixed.hpp"
 
-int	main(void)
+int main(void)
 {
-	Phonebook	phonebook;
-	std::string	entry;
-
-	phonebook.start_phonebook();
-	while (true)
-	{
-		std::cout << "> ";
-		std::getline(std::cin, entry);
-		if (std::cin.eof())
-			return (0);
-		if (entry == "ADD")
-			phonebook.add_contact(phonebook.index);
-		else if (entry == "SEARCH")
-			phonebook.search_contact(phonebook.index - 1);
-		else if (entry == "EXIT")
-			return (0);
-		else
-			std::cout << "* Please enter a valid entry: ADD, SEARCH or EXIT" << std::endl;
-	}
-	return (0);
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
 }

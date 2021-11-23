@@ -5,33 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/13 19:00:09 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/23 14:11:48 by lwourms          ###   ########.fr       */
+/*   Created: 2021/11/23 15:53:30 by lwourms           #+#    #+#             */
+/*   Updated: 2021/11/23 17:27:08 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/class.phonebook.hpp"
+#include "../headers/Class.ClapTrap.hpp"
 
-int	main(void)
+int main()
 {
-	Phonebook	phonebook;
-	std::string	entry;
+	ClapTrap	claptrap1("Arnold Schwarzenegger");
+	ClapTrap	claptrap2("Thierry Henry");
 
-	phonebook.start_phonebook();
-	while (true)
-	{
-		std::cout << "> ";
-		std::getline(std::cin, entry);
-		if (std::cin.eof())
-			return (0);
-		if (entry == "ADD")
-			phonebook.add_contact(phonebook.index);
-		else if (entry == "SEARCH")
-			phonebook.search_contact(phonebook.index - 1);
-		else if (entry == "EXIT")
-			return (0);
-		else
-			std::cout << "* Please enter a valid entry: ADD, SEARCH or EXIT" << std::endl;
-	}
-	return (0);
+	claptrap1.attack("Thierry Henry");
+	claptrap2.takeDamage(0);
+	claptrap2.beRepaired(5);
+	claptrap2.attack("Arnold Schwarzenegger");
+	claptrap1.takeDamage(0);
+	return 0;
 }
