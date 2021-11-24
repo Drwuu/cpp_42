@@ -20,7 +20,7 @@ Cat::Cat(void): Animal("Cat"), _brain(new Brain())
 		_brain->_ideas[i] = "Kit Kat";
 	std::cout << "Cat created\n";
 }
-Cat::Cat(Cat const &src): Animal("Cat"), _brain(new Brain)
+Cat::Cat(Cat const &src): Animal("Cat"), _brain(NULL)
 {
 	*this = src;
 	std::cout << "Cat copied\n";
@@ -47,7 +47,8 @@ const Brain	*Cat::getBrain() const
 /* operator assignment */
 Cat	&Cat::operator=(Cat const &src)
 {
-	delete _brain;
+	if (_brain)
+		delete _brain;
 	_brain = new Brain();
 	for (int i = 0; i < 100; i++)
 		_brain->_ideas[i] = src._brain->_ideas[i];

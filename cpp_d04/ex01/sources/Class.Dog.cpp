@@ -19,7 +19,7 @@ Dog::Dog(void): Animal("Dog"), _brain(new Brain())
 		_brain->_ideas[i] = "Hot Dog";
 	std::cout << "Dog created\n";
 }
-Dog::Dog(Dog const &src): Animal("Dog"), _brain(new Brain())
+Dog::Dog(Dog const &src): Animal("Dog"), _brain(NULL)
 {
 	*this = src;
 	std::cout << "Dog copied\n";
@@ -44,7 +44,8 @@ const Brain	*Dog::getBrain() const
 /* operator assignment */
 Dog	&Dog::operator=(Dog const &src)
 {
-	delete _brain;
+	if (_brain)
+		delete _brain;
 	_brain = new Brain();
 	for (int i = 0; i < 100; i++)
 		_brain->_ideas[i] = src._brain->_ideas[i];
