@@ -1,6 +1,6 @@
 NAME			=  vers_une_classe_plus_utile
 
-FLAGS			= -Wall -Wextra -Werror -g -fsanitize=address
+FLAGS			= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 OPT				= -O3 -flto -Ofast -ffast-math -march=native
 
 OBJS_DIR		= objects
