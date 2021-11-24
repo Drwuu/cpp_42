@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.FragTrap.hpp                                 :+:      :+:    :+:   */
+/*   Class.Brain.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:51:02 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/24 12:30:19 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/24 13:12:48 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FragTrap_HPP
- #define FragTrap_HPP
+#pragma once
+#ifndef Brain_HPP
+ #define Brain_HPP
 
-#include "Class.ClapTrap.hpp"
 #include <iostream>
 
-class FragTrap : virtual public ClapTrap
+class Brain
 {
 	private:
 
 	public:
+		std::string	_ideas[100];
 		/* constructors*/
-		FragTrap(void);
-		FragTrap(std::string name);
-		FragTrap(FragTrap const &src);
-		~FragTrap();
+		Brain(void);
+		Brain(Brain const &src);
+		virtual ~Brain();
 
 		/* member functions */
-		void 		attack(std::string const &target);
-		void 		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
-		void		highFivesGuys();
 
 		/* getters and setters */
+		const std::string	*getIdeas() const;
+		void				setIdeas(const std::string ideas[100]);
 
 		/* operator assignment */
-		FragTrap	&operator=(FragTrap const &rhs);
+		Brain	&operator=(Brain const &rhs);
 };
+
+
+
 
 #endif

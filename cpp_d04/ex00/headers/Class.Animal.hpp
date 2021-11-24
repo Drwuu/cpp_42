@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.FragTrap.hpp                                 :+:      :+:    :+:   */
+/*   Class.Animal.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:51:02 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/24 12:30:19 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/24 13:12:48 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FragTrap_HPP
- #define FragTrap_HPP
+#pragma once
+#ifndef ANIMAL_HPP
+ #define ANIMAL_HPP
 
-#include "Class.ClapTrap.hpp"
 #include <iostream>
 
-class FragTrap : virtual public ClapTrap
+class Animal
 {
-	private:
+	protected:
+		std::string	_type;
+		Animal(std::string type);
 
 	public:
 		/* constructors*/
-		FragTrap(void);
-		FragTrap(std::string name);
-		FragTrap(FragTrap const &src);
-		~FragTrap();
+		Animal(void);
+		Animal(Animal const &src);
+		virtual ~Animal();
 
 		/* member functions */
-		void 		attack(std::string const &target);
-		void 		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
-		void		highFivesGuys();
+		void virtual	makeSound() const;
 
 		/* getters and setters */
+		std::string	getType() const;
 
 		/* operator assignment */
-		FragTrap	&operator=(FragTrap const &rhs);
+		Animal	&operator=(Animal const &rhs);
 };
+
+
+
 
 #endif

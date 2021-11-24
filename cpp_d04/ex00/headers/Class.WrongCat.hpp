@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.FragTrap.hpp                                 :+:      :+:    :+:   */
+/*   Class.WrongCat.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:51:02 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/24 12:30:19 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/24 15:12:58 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FragTrap_HPP
- #define FragTrap_HPP
+#pragma once
+#ifndef WrongCat_HPP
+ #define WrongCat_HPP
 
-#include "Class.ClapTrap.hpp"
 #include <iostream>
+#include "../headers/Class.WrongAnimal.hpp"
 
-class FragTrap : virtual public ClapTrap
+class WrongCat : public WrongAnimal
 {
 	private:
-
 	public:
 		/* constructors*/
-		FragTrap(void);
-		FragTrap(std::string name);
-		FragTrap(FragTrap const &src);
-		~FragTrap();
+		WrongCat(void);
+		WrongCat(WrongCat const &src);
+		virtual ~WrongCat();
 
 		/* member functions */
-		void 		attack(std::string const &target);
-		void 		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
-		void		highFivesGuys();
+		void	makeSound() const;
 
 		/* getters and setters */
 
 		/* operator assignment */
-		FragTrap	&operator=(FragTrap const &rhs);
+		WrongCat	&operator=(WrongCat const &rhs);
 };
+
+
+
 
 #endif
