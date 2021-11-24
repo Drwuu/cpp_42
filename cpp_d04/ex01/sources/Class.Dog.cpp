@@ -19,7 +19,7 @@ Dog::Dog(void): Animal("Dog"), _brain(new Brain())
 		_brain->_ideas[i] = "Hot Dog";
 	std::cout << "Dog created\n";
 }
-Dog::Dog(Dog const &src)
+Dog::Dog(Dog const &src): Animal("Dog"), _brain(new Brain())
 {
 	*this = src;
 	std::cout << "Dog copied\n";

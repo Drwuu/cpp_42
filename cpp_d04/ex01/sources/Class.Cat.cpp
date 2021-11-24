@@ -20,7 +20,7 @@ Cat::Cat(void): Animal("Cat"), _brain(new Brain())
 		_brain->_ideas[i] = "Kit Kat";
 	std::cout << "Cat created\n";
 }
-Cat::Cat(Cat const &src)
+Cat::Cat(Cat const &src): Animal("Cat"), _brain(new Brain)
 {
 	*this = src;
 	std::cout << "Cat copied\n";
