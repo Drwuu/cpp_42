@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 19:50:22 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/20 15:15:13 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/26 11:01:10 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Weapon
 		Weapon(std::string type);
 		~Weapon();
 
-		std::string	getType() const;
-		void		setType(std::string type);
+		std::string const 	&getType() const;
+		void				setType(std::string type);
 };
 
 #endif

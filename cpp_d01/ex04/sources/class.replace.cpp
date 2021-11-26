@@ -6,12 +6,13 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 16:11:49 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/20 17:43:51 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/26 13:34:18 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/class.replace.hpp"
 #include <cstdlib>
+#include <sys/_types/_size_t.h>
 
 Replace::Replace(std::string file, std::string s1, std::string s2):
 _file(file), _s1(s1), _s2(s2)
@@ -21,7 +22,6 @@ _file(file), _s1(s1), _s2(s2)
 
 Replace::~Replace()
 {
-
 }
 
 void	Replace::fillContent(void)
@@ -65,22 +65,14 @@ void	Replace::sendContent(void)
 
 std::string	Replace::replaceAll( std::string const &file_content, std::string const &s1, std::string const &s2)
 {
-	std::string result;
-	std::string::const_iterator cbegin = file_content.begin();
-	std::string::const_iterator cend = file_content.end();
-	std::string::const_iterator s1begin = s1.begin();
-	std::string::const_iterator s1end = s1.end();
-	std::string::const_iterator search = std::search(cbegin, cend, s1begin, s1end);
-
-	while (search != cend)
+	std::string replace = file_content;
+	size_t start_pos = 0;
+	while((start_pos = file_content.find(s1, start_pos)) != (size_t)-1)
 	{
-		result.append(cbegin, search);
-		result.append(s2);
-		cbegin = search + s1.size();
-		search = std::search(cbegin, cend, s1begin, s1end);
+		replace.replace(start_pos, s1.length(), s2);
+		start_pos += s2.length();
 	}
-	result.append(cbegin, search);
-	return result;
+	return replace;
 }
 
 int	Replace::searchAndReplace(void)
@@ -88,9 +80,9 @@ int	Replace::searchAndReplace(void)
 	int ret;
 	if ((ret = _s1.empty()))
 		cout << "s1 is empty" << endl;
-	if ((ret = _s2.empty()))
-		cout << "s2 is is empty" << endl;
-	if ((ret = _file.empty()))
+	else if ((ret = _s2.empty()))
+		cout << "s2 is empty" << endl;
+	else if ((ret = _file.empty()))
 		cout << "file is empty" << endl;
 	if (ret)
 		return 1;

@@ -6,13 +6,11 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 14:39:39 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/19 19:40:49 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/26 10:58:40 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstdio>
 #include <iostream>
-#include <string>
 
 int main()
 {
@@ -20,11 +18,15 @@ int main()
 	std::string	*pstr = &str;
 	std::string &rstr = str;
 
-	printf("Adress in memory of str = %p\n", str.c_str());
-	printf("Adress in memory of pstr = %p\n", pstr->c_str());
-	printf("Adress in memory of rstr = %p\n", rstr.c_str());
+	std::cout << "Adress in memory of str  = " << &str << std::endl;
+	std::cout << "Adress in memory of pstr = " << pstr << std::endl;
+	std::cout << "Adress in memory of rstr = " << &rstr << std::endl;
 
 	std::cout << "\nValues are:\n";
+	std::cout << "str: " << str << "*pstr: " << *pstr << "rstr: " << rstr << std::endl;
+
+	std::cout << "Changing value of str modifying str\n";
+	str = "MATANE HIS BRAIN\n";
 	std::cout << "str: " << str << "*pstr: " << *pstr << "rstr: " << rstr << std::endl;
 
 	std::cout << "Changing value of str modifying *pstr\n";
