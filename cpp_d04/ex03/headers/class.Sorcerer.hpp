@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:57:47 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/25 20:40:02 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/26 14:06:47 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Sorcerer: public ICharacter
 		AMateria	*_inventory[4];
 	public:
 		Sorcerer(std::string const &name);
+		Sorcerer(Sorcerer const &src);
 		virtual ~Sorcerer();
 
 		/* Getters and setters */

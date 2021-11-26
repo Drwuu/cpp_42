@@ -1,32 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   class.Cure.hpp                                 :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 19:57:47 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/25 12:40:52 by lwourms          ###   ########.fr       */
+/*   Created: 2021/11/26 13:58:20 by lwourms           #+#    #+#             */
+/*   Updated: 2021/11/26 13:58:21 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#include "class.AMateria.hpp"
-
-class Cure : public AMateria
-{
-	public:
-		Cure();
-		Cure(Cure const &src);
-		virtual ~Cure();
-
-		/* Getters and setters */
-
-		/* Member functions */
-		AMateria	*clone() const;
-		void		use(ICharacter &target);
-
-		/* Operator assignment */
-		Cure	&operator=(Cure const &src);
-};

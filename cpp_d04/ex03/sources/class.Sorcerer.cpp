@@ -19,6 +19,10 @@ Sorcerer::Sorcerer(std::string const &name): _name(name)
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 }
+Sorcerer::Sorcerer(Sorcerer const &src): _name(src._name)
+{
+	*this = src;
+}
 Sorcerer::~Sorcerer()
 {
 	for (int i = 0; i < 4; i++)

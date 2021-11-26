@@ -20,6 +20,10 @@ MateriaSource::MateriaSource()
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 }
+MateriaSource::MateriaSource(MateriaSource const &src)
+{
+	*this = src;
+}
 MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; i++)

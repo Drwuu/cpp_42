@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:57:05 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/25 16:01:51 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/26 14:12:52 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 /* Constructors */
 Cure::Cure(): AMateria("cure")
 {
+}
+Cure::Cure(Cure const &src): AMateria(src._type)
+{
+	*this = src;
 }
 Cure::~Cure()
 {

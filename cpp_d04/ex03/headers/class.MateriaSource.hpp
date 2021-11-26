@@ -21,6 +21,7 @@ class MateriaSource : public IMateriaSource
 		AMateria	*_inventory[4];
 	public:
 		MateriaSource();
+		MateriaSource(MateriaSource const &src);
 		virtual ~MateriaSource();
 
 		/* Getters and setters */

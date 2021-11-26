@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:57:05 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/25 19:28:22 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/26 14:13:06 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 /* Constructors */
 Ice::Ice(): AMateria("ice")
 {
+}
+Ice::Ice(Ice const &src): AMateria(src._type)
+{
+	*this = src;
 }
 Ice::~Ice()
 {

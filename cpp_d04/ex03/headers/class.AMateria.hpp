@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:57:47 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/25 18:59:40 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/26 14:05:18 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class AMateria
 		std::string	_type;
 	public:
 		AMateria(std::string const &type);
+		AMateria(AMateria const &src);
 		virtual	~AMateria();
 
 		/* Getters and setters */

@@ -18,6 +18,7 @@ class Ice : public AMateria
 {
 	public:
 		Ice();
+		Ice(Ice const &src);
 		virtual ~Ice();
 
 		/* Getters and setters */
