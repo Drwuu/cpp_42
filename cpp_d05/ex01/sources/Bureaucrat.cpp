@@ -6,15 +6,16 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:58:20 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/27 11:03:55 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/27 14:31:28 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/Bureaucrat.hpp"
+#include "../headers/Form.hpp"
 
 /* attributes */
-unsigned int const	Bureaucrat::maxGrade = 1;
-unsigned int const	Bureaucrat::minGrade = 150;
+int const	Bureaucrat::maxGrade = 1;
+int const	Bureaucrat::minGrade = 150;
 
 /* constructors */
 Bureaucrat::Bureaucrat(): _name("Default"), _grade(minGrade)
@@ -23,9 +24,9 @@ Bureaucrat::Bureaucrat(): _name("Default"), _grade(minGrade)
 Bureaucrat::Bureaucrat(std::string const &name, int grade): _name(name), _grade(grade)
 {
 	if (_grade < maxGrade)
-		throw GradeTooHighException();
-	if (_grade > minGrade)
-		throw GradeTooLowException();
+		throw GradeTooHighException(*this);
+	else if (_grade > minGrade)
+		throw GradeTooLowException(*this);
 }
 Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src._name), _grade(src._grade)
 {
@@ -49,15 +50,31 @@ int const	&Bureaucrat::getGrade() const
 void	Bureaucrat::upGrade(int const grade)
 {
 	_grade -= grade;
-	if (_grade < (int)maxGrade)
-		throw GradeTooHighException();
+	if (_grade < maxGrade)
+		throw GradeTooHighException(*this);
 }
 
 void	Bureaucrat::downGrade(int const grade)
 {
 	_grade += grade;
-	if (_grade > (int)minGrade)
-		throw GradeTooLowException();
+	if (_grade > minGrade)
+		throw GradeTooLowException(*this);
+}
+void	Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signs " << form.getName() << " of grade " << form.getGrade() << std::endl;
+	}
+	catch (Form::GradeTooHighException &e)
+	{
+		std::cout << _name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << _name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 /* assignment operators */

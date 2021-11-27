@@ -1,6 +1,6 @@
-NAME			=  d05_ex00
+NAME			=  d05_ex01
 
-FLAGS			= -Wall -Wextra -Werror -g -fsanitize=address
+FLAGS			= -Wall -Wextra -Werror #-g -fsanitize=address
 OPT				= -O3 -flto -Ofast -ffast-math -march=native
 
 OBJS_DIR		= objects
@@ -9,9 +9,11 @@ INCLUDES		= headers
 SRCS			= \
 main.cpp \
 Bureaucrat.cpp \
+Form.cpp \
 
 HEADERS			= \
 Bureaucrat.hpp \
+Form.hpp \
 
 FILES			= sources
 FOLDERS			= objects

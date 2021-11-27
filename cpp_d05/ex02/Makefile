@@ -1,4 +1,4 @@
-NAME			=  d05_ex00
+NAME			=  d05_ex02
 
 FLAGS			= -Wall -Wextra -Werror -g -fsanitize=address
 OPT				= -O3 -flto -Ofast -ffast-math -march=native
@@ -9,9 +9,17 @@ INCLUDES		= headers
 SRCS			= \
 main.cpp \
 Bureaucrat.cpp \
+AForm.cpp \
+ShrubberyCreationForm.cpp \
+RobotomyRequestForm.cpp \
+PresidentialPardonForm.cpp \
 
 HEADERS			= \
 Bureaucrat.hpp \
+AForm.hpp \
+ShrubberyCreationForm.hpp \
+RobotomyRequestForm.hpp \
+PresidentialPardonForm.hpp \
 
 FILES			= sources
 FOLDERS			= objects
