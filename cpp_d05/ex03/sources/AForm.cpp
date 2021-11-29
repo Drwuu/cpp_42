@@ -72,7 +72,7 @@ void	AForm::beSigned(Bureaucrat &bureaucrat)
 	else
 		_signed = true;
 }
-void	AForm::executeForm(Bureaucrat const &executor) const
+void	AForm::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() > _gradeExec)
 		throw FormNotSignedException(*this, executor, _signed);

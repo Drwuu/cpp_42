@@ -44,7 +44,7 @@ class AForm
 
 		/* member functions */
 		void			beSigned(Bureaucrat &bureaucrat);
-		virtual void	executeForm(Bureaucrat const &executor) const;
+		virtual void	execute(Bureaucrat const &executor) const;
 
 		/* assignment operators */
 		AForm	&operator=(AForm const &src);

@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:58:20 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/27 17:56:10 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/29 16:39:51 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	Bureaucrat::signForm(AForm &form)
 void	Bureaucrat::executeForm(AForm const &form) const
 {
 	try {
-		form.executeForm(*this);
+		form.execute(*this);
 	}
 	catch (AForm::FormNotSignedException &e) {
 		std::cout << e.what() << std::endl;

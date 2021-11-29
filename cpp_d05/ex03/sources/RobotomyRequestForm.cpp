@@ -37,7 +37,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 /* member functions */
 void	RobotomyRequestForm::executeForm(Bureaucrat const &executor) const
 {
-	AForm::executeForm(executor);
+	AForm::execute(executor);
 	srand(time(NULL));
 	int randomNb = rand() % 2;
 	std::cout << "Bzzzz bzzzz " << std::endl;

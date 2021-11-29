@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 14:59:09 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/27 17:10:11 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/29 16:50:06 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ShrubberyCreationForm::executeForm(Bureaucrat const &executor) const
 {
 	std::ofstream	out;
 
-	AForm::executeForm(executor);
+	AForm::execute(executor);
 	std::cout << executor.getName() << " executes " << AForm::getName() << std::endl;
 	out.open(_fileName);
 	if (_write.fail())
