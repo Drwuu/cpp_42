@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:58:18 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/27 14:46:28 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/27 20:58:01 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,19 +79,19 @@ int main()
 	}
 	catch (Bureaucrat::GradeTooHighException &e) {
 		std::cout << e.what() << std::endl;
-		return 0;
+		exit(EXIT_FAILURE);
 	}
 	catch (Bureaucrat::GradeTooLowException &e) {
 		std::cout << e.what() << std::endl;
-		return 0;
+		exit(EXIT_FAILURE);
 	}
 	catch (Form::GradeTooHighException &e) {
 		std::cout << e.what() << std::endl;
-		return 0;
+		exit(EXIT_FAILURE);
 	}
 	catch (Form::GradeTooLowException &e) {
 		std::cout << e.what() << std::endl;
-		return 0;
+		exit(EXIT_FAILURE);
 	}
 	return 0;
 }

@@ -9,6 +9,7 @@ class ShrubberyCreationForm : public AForm
 		/* attributes */
 		int static const	_signGrade;
 		int static const	_execGrade;
+		std::ofstream		_write;
 		std::string			_fileName;
 	public:
 		/* constructors */
