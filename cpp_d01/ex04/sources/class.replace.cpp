@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 16:11:49 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/26 13:34:18 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/11/29 11:28:38 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,16 +63,20 @@ void	Replace::sendContent(void)
 	}
 }
 
-std::string	Replace::replaceAll( std::string const &file_content, std::string const &s1, std::string const &s2)
+std::string	replace(std::string str, std::string to_replace, std::string by)
 {
-	std::string replace = file_content;
-	size_t start_pos = 0;
-	while((start_pos = file_content.find(s1, start_pos)) != (size_t)-1)
+	std::string	result;
+	size_t		found_index;
+
+	if (to_replace.empty())
+		return str;
+	while ((found_index = str.find(to_replace)) != std::string::npos)
 	{
-		replace.replace(start_pos, s1.length(), s2);
-		start_pos += s2.length();
+		result.append(str.substr(0, found_index)).append(by);
+		str.erase(0, found_index + to_replace.size());
 	}
-	return replace;
+	result.append(str);
+	return result;
 }
 
 int	Replace::searchAndReplace(void)
@@ -87,7 +91,7 @@ int	Replace::searchAndReplace(void)
 	if (ret)
 		return 1;
 	fillContent();
-	_file_content = replaceAll(_file_content, _s1, _s2);
+	_file_content = replace(_file_content, _s1, _s2);
 	sendContent();
 	return 0;
 }
