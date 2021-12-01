@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:51:19 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/24 18:42:03 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/01 19:32:37 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,12 @@ int main()
 
 	std::cout << "\nTesting copies\n";
 	Cat *cat = new Cat();
-	Cat cpy_cat(*cat);
+	Cat *cpy_cat = new Cat(*cat);
 	std::cout << "Cat original brain idea = " << cat->getBrain()->_ideas[0] << std::endl;
 	delete cat;
-	std::cout << "Cpy cat sound = " ; cpy_cat.makeSound();
-	std::cout << "Cat copy brain idea = " << cpy_cat.getBrain()->_ideas[0] << std::endl;
+	std::cout << "Cpy cat sound = " ; cpy_cat->makeSound();
+	std::cout << "Cat copy brain idea = " << cpy_cat->getBrain()->_ideas[0] << std::endl;
+	delete cpy_cat;
 
 	std::cout << "\nDeleting\n";
 	for (int i = 0; i < 4; i++)

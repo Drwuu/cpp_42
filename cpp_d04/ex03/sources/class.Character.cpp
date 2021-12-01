@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   class.Sorcerer.cpp                                      :+:      :+:    :+:   */
+/*   class.Character.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 12:57:05 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/25 14:04:43 by lwourms          ###   ########.fr       */
+/*   Created: 2021/12/01 20:08:56 by lwourms           #+#    #+#             */
+/*   Updated: 2021/12/01 20:34:15 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/class.Sorcerer.hpp"
-#include <cstddef>
+#include "../headers/class.Character.hpp"
 
 /* Constructors */
-Sorcerer::Sorcerer(std::string const &name): _name(name)
+Character::Character(): _name("Default")
 {
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 }
-Sorcerer::Sorcerer(Sorcerer const &src): _name(src._name)
+Character::Character(std::string const &name): _name(name)
+{
+	for (int i = 0; i < 4; i++)
+		_inventory[i] = NULL;
+}
+Character::Character(Character const &src)
 {
 	*this = src;
 }
-Sorcerer::~Sorcerer()
+Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
 		if (_inventory[i])
@@ -34,17 +38,17 @@ Sorcerer::~Sorcerer()
 }
 
 /* Getters and setters */
-std::string const &Sorcerer::getName() const
+std::string const &Character::getName() const
 {
 	return _name;
 }
-AMateria 	*(&Sorcerer::getInventory())[4]
+AMateria 	*(&Character::getInventory())[4]
 {
 	return _inventory;
 }
 
 /* Member functions */
-void Sorcerer::equip(AMateria *m)
+void Character::equip(AMateria *m)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -55,18 +59,18 @@ void Sorcerer::equip(AMateria *m)
 		}
 	}
 }
-void Sorcerer::unequip(int idx)
+void Character::unequip(int idx)
 {
 	_inventory[idx] = NULL;
 }
-void Sorcerer::use(int idx, ICharacter &target)
+void Character::use(int idx, ICharacter &target)
 {
 	if (_inventory[idx])
 		_inventory[idx]->use(target);
 }
 
 /* Operator assignment */
-Sorcerer	&Sorcerer::operator=(Sorcerer const &src)
+Character	&Character::operator=(Character const &src)
 {
 	_name = src._name;
 	for (int i = 0; i < 4; i++)

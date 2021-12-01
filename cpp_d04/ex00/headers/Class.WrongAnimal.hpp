@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef WrongAnimal_HPP
- #define WrongAnimal_HPP
-
 #include <iostream>
 
 class WrongAnimal
@@ -24,7 +21,7 @@ class WrongAnimal
 
 	public:
 		/* constructors*/
-		WrongAnimal(void);
+		WrongAnimal();
 		WrongAnimal(WrongAnimal const &src);
 		virtual ~WrongAnimal();
 
@@ -37,8 +34,3 @@ class WrongAnimal
 		/* operator assignment */
 		WrongAnimal	&operator=(WrongAnimal const &rhs);
 };
-
-
-
-
-#endif

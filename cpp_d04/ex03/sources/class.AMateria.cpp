@@ -13,6 +13,9 @@
 #include "../headers/class.AMateria.hpp"
 
 /* Constructors */
+AMateria::AMateria(): _type("Default")
+{
+}
 AMateria::AMateria(std::string const &type): _type(type)
 {
 }

@@ -1,6 +1,6 @@
 NAME			=  d04_ex01
 
-FLAGS			= -Wall -Wextra -Werror -g -fsanitize=address
+FLAGS			= -Wall -Wextra -Werror #-g -fsanitize=address
 OPT				= -O3 -flto -Ofast -ffast-math -march=native
 
 OBJS_DIR		= objects

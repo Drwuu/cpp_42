@@ -6,13 +6,13 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:32:10 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/26 10:21:26 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/01 20:53:14 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/class.Ice.hpp"
 #include "../headers/class.Cure.hpp"
-#include "../headers/class.Sorcerer.hpp"
+#include "../headers/class.Character.hpp"
 #include "../headers/class.MateriaSource.hpp"
 #include <iostream>
 
@@ -23,13 +23,13 @@ int main()
 		IMateriaSource* src = new MateriaSource();
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
-		ICharacter* me = new Sorcerer("me");
+		ICharacter* me = new Character("me");
 		AMateria* tmp;
 		tmp = src->createMateria("ice");
 		me->equip(tmp);
 		tmp = src->createMateria("cure");
 		me->equip(tmp);
-		ICharacter* bob = new Sorcerer("bob");
+		ICharacter* bob = new Character("bob");
 		me->use(0, *bob);
 		me->use(1, *bob);
 
@@ -40,11 +40,12 @@ int main()
 
 	std::cout << "\nMy tests:\n";
 	{
-		ICharacter	*sorcerer = new Sorcerer("Pug");
+		ICharacter	*sorcerer = new Character("Pug");
 		std::cout << "sorcerer name = " << sorcerer->getName() << std::endl;
-		ICharacter	*sorcerer2 = new Sorcerer("Bad Sorcerer");
+		ICharacter	*sorcerer2 = new Character("Bad Sorcerer");
 		std::cout << std::endl;
 
+		/////////////////////////////////////////////
 		IMateriaSource	*materias = new MateriaSource();
 		materias->learnMateria(new Ice());
 		AMateria *ice2 =  materias->createMateria("ice");
@@ -57,12 +58,28 @@ int main()
 		cure2->use(*sorcerer2);
 		std::cout << std::endl;
 
+		///// Unequip() produce needing of free the materia unequiped /////
 		sorcerer->equip(ice2);
 		sorcerer->equip(cure2);
 		sorcerer->use(0, *sorcerer2);
 		sorcerer->use(1, *sorcerer2);
 		sorcerer->unequip(1);
 		sorcerer->use(1, *sorcerer2);
+		std::cout << std::endl;
+
+		////////// Clone /////////////
+		std::cout << "Testing clones" << std::endl;
+		AMateria *clone_cure2 =  cure2->clone();
+		clone_cure2->use(*sorcerer);
+		std::cout << std::endl;
+
+		////////// Deep Copy test /////////////
+		std::cout << "Testing deep copy" << std::endl;
+		Character tanis("Tanis");
+		tanis.equip(clone_cure2);
+		Character *coco = new Character(tanis);
+		std::cout << "New charecter from deep copy = " << coco->getName() << std::endl;
+		coco->use(0, *sorcerer2);
 
 		delete sorcerer;
 		delete sorcerer2;

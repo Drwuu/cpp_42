@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef Brain_HPP
- #define Brain_HPP
-
 #include <iostream>
 
 class Brain
@@ -36,8 +33,3 @@ class Brain
 		/* operator assignment */
 		Brain	&operator=(Brain const &rhs);
 };
-
-
-
-
-#endif

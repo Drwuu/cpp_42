@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   class.Sorcerer.hpp                                 :+:      :+:    :+:   */
+/*   class.Character.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -16,15 +16,16 @@
 #include "class.ICharacter.hpp"
 #include "class.AMateria.hpp"
 
-class Sorcerer: public ICharacter
+class Character: public ICharacter
 {
 	private:
 		std::string	_name;
 		AMateria	*_inventory[4];
 	public:
-		Sorcerer(std::string const &name);
-		Sorcerer(Sorcerer const &src);
-		virtual ~Sorcerer();
+		Character();
+		Character(std::string const &name);
+		Character(Character const &src);
+		virtual ~Character();
 
 		/* Getters and setters */
 		std::string const	&getName() const;
@@ -36,5 +37,5 @@ class Sorcerer: public ICharacter
 		void		use(int idx, ICharacter &target);
 
 		/* Operator assignment */
-		Sorcerer	&operator=(Sorcerer const &src);
+		Character	&operator=(Character const &src);
 };

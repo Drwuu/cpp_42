@@ -33,9 +33,6 @@ void	WrongCat::makeSound() const
 	std::cout << "WrongCat meowed\n";
 }
 
-
-/* getters and setters */
-
 /* operator assignment */
 WrongCat	&WrongCat::operator=(WrongCat const &src)
 {

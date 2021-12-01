@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef Brain_HPP
- #define Brain_HPP
-
 #include <iostream>
 
 class Brain
@@ -27,8 +24,6 @@ class Brain
 		Brain(Brain const &src);
 		virtual ~Brain();
 
-		/* member functions */
-
 		/* getters and setters */
 		const std::string	*getIdeas() const;
 		void				setIdeas(const std::string ideas[100]);
@@ -36,8 +31,3 @@ class Brain
 		/* operator assignment */
 		Brain	&operator=(Brain const &rhs);
 };
-
-
-
-
-#endif

@@ -10,7 +10,7 @@ SRCS			= \
 main.cpp \
 class.AMateria.cpp \
 class.Ice.cpp \
-class.Sorcerer.cpp \
+class.Character.cpp \
 class.Cure.cpp \
 class.MateriaSource.cpp \
 
@@ -19,7 +19,7 @@ class.AMateria.hpp \
 class.Ice.hpp \
 class.Cure.hpp \
 class.ICharacter.hpp \
-class.Sorcerer.hpp \
+class.Character.hpp \
 class.IMateriaSource.hpp \
 class.MateriaSource.hpp \
 

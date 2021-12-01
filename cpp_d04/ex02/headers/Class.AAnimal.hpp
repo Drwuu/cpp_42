@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef AANIMAL_HPP
- #define AANIMAL_HPP
-
 #include <iostream>
 
 class AAnimal
@@ -26,7 +23,7 @@ class AAnimal
 		virtual ~AAnimal();
 
 		/* member functions */
-		void virtual	makeSound() const = 0;
+		virtual	void makeSound() const = 0;
 
 		/* getters and setters */
 		std::string	getType() const;
@@ -34,8 +31,3 @@ class AAnimal
 		/* operator assignment */
 		AAnimal	&operator=(AAnimal const &rhs);
 };
-
-
-
-
-#endif

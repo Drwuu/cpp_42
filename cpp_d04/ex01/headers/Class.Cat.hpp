@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef Cat_HPP
- #define Cat_HPP
-
 #include <iostream>
 #include "../headers/Class.Animal.hpp"
 #include "../headers/Class.Brain.hpp"
@@ -38,8 +35,3 @@ class Cat : public Animal
 		/* operator assignment */
 		Cat	&operator=(Cat const &rhs);
 };
-
-
-
-
-#endif

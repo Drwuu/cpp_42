@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef Dog_HPP
- #define Dog_HPP
-
 #include <iostream>
 #include "../headers/Class.AAnimal.hpp"
 #include "../headers/Class.Brain.hpp"
@@ -38,8 +35,3 @@ class Dog : public AAnimal
 		/* operator assignment */
 		Dog	&operator=(Dog const &rhs);
 };
-
-
-
-
-#endif

@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef Dog_HPP
- #define Dog_HPP
-
 #include <iostream>
 #include "../headers/Class.Animal.hpp"
 
@@ -22,20 +19,13 @@ class Dog : public Animal
 	private:
 	public:
 		/* constructors*/
-		Dog(void);
+		Dog();
 		Dog(Dog const &src);
 		virtual ~Dog();
 
 		/* member functions */
-		void	makeSound() const;
-
-		/* getters and setters */
+		virtual void	makeSound() const;
 
 		/* operator assignment */
 		Dog	&operator=(Dog const &rhs);
 };
-
-
-
-
-#endif

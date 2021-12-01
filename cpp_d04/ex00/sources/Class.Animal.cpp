@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:51:00 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/24 14:55:43 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:23:16 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@
 /* constructors*/
 Animal::Animal(void)
 {
-	std::cout << "Animal created\n";
+	std::cout << "Animal created" << std::endl;
 }
 Animal::Animal(std::string type): _type(type)
 {
-	std::cout << "Animal of type " << _type << " created\n";
+	std::cout << "Animal of type " << _type << " created" << std::endl;
 }
 Animal::Animal(Animal const &src)
 {
 	*this = src;
-	std::cout << "Animal copied\n";
+	std::cout << "Animal copied" << std::endl;
 }
 Animal::~Animal()
 {
-	std::cout << "Animal destroyed\n";
+	std::cout << "Animal destroyed" << std::endl;
 }
 
 /* member functions */
 void	Animal::makeSound() const
 {
-	std::cout << "Animal made a sound\n";
+	std::cout << "Animal made a sound" << std::endl;
 }
 
 /* getters and setters */

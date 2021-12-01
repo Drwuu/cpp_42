@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef Cat_HPP
- #define Cat_HPP
-
 #include <iostream>
 #include "../headers/Class.Animal.hpp"
 
@@ -22,20 +19,13 @@ class Cat : public Animal
 	private:
 	public:
 		/* constructors*/
-		Cat(void);
+		Cat();
 		Cat(Cat const &src);
 		virtual ~Cat();
 
 		/* member functions */
-		void	makeSound() const;
-
-		/* getters and setters */
+		virtual void	makeSound() const;
 
 		/* operator assignment */
 		Cat	&operator=(Cat const &rhs);
 };
-
-
-
-
-#endif
