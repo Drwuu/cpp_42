@@ -6,72 +6,72 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:51:00 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/24 12:51:16 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/01 16:59:05 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/Class.DiamondTrap.hpp"
 
 /* constructors*/
-DiamondTrap::DiamondTrap(void)
+DiamondTrap::DiamondTrap(): _name("Default")
 {
-	ClapTrap::setName(_name + "_clap_name");
-	FragTrap::setHitPoints(FragTrap::getHitPoints());
-	ScavTrap::setEnergyPoints(ScavTrap::getEnergyPoints());
-	FragTrap::setAttackDammage(FragTrap::getAttackDammage());
-	std::cout << "DiamondTrap <" << getName() << "> created" << std::endl;
+	ClapTrap::_name = _name + "_clap_name";
+	_energyPoints = 50;
+	_hitPoints = 100;
+	_attackDammage = 30;
+
+	std::cout << "DiamondTrap <" << _name << "> created" << std::endl;
+	std::cout << "DiamondTrap <" << _name << "> " << "stats are: \n"
+	<< "attack damage:" << _attackDammage << std::endl
+	<< "energy points:" << _energyPoints << std::endl
+	<< "hit points:" << _hitPoints << std::endl;
 }
 DiamondTrap::DiamondTrap(std::string name): _name(name)
 {
-	ClapTrap::setName(_name + "_clap_name");
-	FragTrap::setHitPoints(FragTrap::getHitPoints());
-	ScavTrap::setEnergyPoints(ScavTrap::getEnergyPoints());
-	FragTrap::setAttackDammage(FragTrap::getAttackDammage());
-	std::cout << "DiamondTrap <" << getName() << "> created" << std::endl;
+	ClapTrap::_name = _name + "_clap_name";
+	_energyPoints = 50;
+	_hitPoints = 100;
+	_attackDammage = 30;
+
+	std::cout << "DiamondTrap <" << _name << "> created" << std::endl;
+	std::cout << "DiamondTrap <" << _name << "> " << "stats are: \n"
+	<< "attack damage:" << _attackDammage << std::endl
+	<< "energy points:" << _energyPoints << std::endl
+	<< "hit points:" << _hitPoints << std::endl;
 }
 DiamondTrap::DiamondTrap(DiamondTrap const &src)
 {
 	*this = src;
-	std::cout << "DiamondTrap <" << getName() << "> created" << std::endl;
+	std::cout << "DiamondTrap <" << _name << "> created" << std::endl;
 }
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "DiamondTrap <" << getName() << "> is dead" << std::endl;
+	std::cout << "DiamondTrap <" << _name << "> is dead" << std::endl;
 }
 
 /* member functions */
 void	DiamondTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "DiamondTrap <" << getName() << "> lost <" << amount \
+	std::cout << "DiamondTrap <" << _name << "> lost <" << amount \
 	<< "> points of energy!" << std::endl;
 }
 void	DiamondTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "DiamondTrap <" << getName() << "> healed himself with <" << amount \
+	std::cout << "DiamondTrap <" << _name << "> healed himself with <" << amount \
 	<< "> points of energy!" << std::endl;
 }
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "DiamondTrap I'm <" << getName() << \
-	"> from ClapTrap <" << ClapTrap::getName() << ">" << std::endl;
-}
-
-/* getters and setters */
-std::string	DiamondTrap::getName(void) const
-{
-	return _name;
-}
-void	DiamondTrap::setName(const std::string name)
-{
-	_name = name;
+	std::cout << "DiamondTrap I'm <" << _name << \
+	"> from ClapTrap <" << ClapTrap::_name << ">" << std::endl;
 }
 
 /* operator assignment */
 DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &src)
 {
-	setName(src.getName());
-	setHitPoints(src.getHitPoints());
-	setEnergyPoints(src.getEnergyPoints());
-	setAttackDammage(src.getAttackDammage());
+	_name = src._name;
+	_attackDammage = src._attackDammage;
+	_hitPoints = src._hitPoints;
+	_energyPoints = src._energyPoints;
 	return *this;
 }

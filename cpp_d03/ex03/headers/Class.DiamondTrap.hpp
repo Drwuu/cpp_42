@@ -24,7 +24,7 @@ class DiamondTrap : public FragTrap, public ScavTrap
 
 	public:
 		/* constructors*/
-		DiamondTrap(void);
+		DiamondTrap();
 		DiamondTrap(std::string name);
 		DiamondTrap(DiamondTrap const &src);
 		~DiamondTrap();
@@ -34,10 +34,6 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		void		beRepaired(unsigned int amount);
 		void		whoAmI();
 		using		ScavTrap::attack;
-
-		/* getters and setters */
-		std::string	getName(void) const;
-		void		setName(const std::string name);
 
 		/* operator assignment */
 		DiamondTrap	&operator=(DiamondTrap const &rhs);

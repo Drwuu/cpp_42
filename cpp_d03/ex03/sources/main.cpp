@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:53:30 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/24 12:14:13 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/01 16:55:48 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,9 @@ int main()
 
 	std::cout << "\nNew tests 3\n";
 	DiamondTrap	diamondTrap1("Joker");
+	std::cout << std::endl;
 	diamondTrap1.attack("Thierry Henry");
-	claptrap2.takeDamage(20);
+	claptrap2.takeDamage(30);
 	claptrap1.attack("Joker");
 	diamondTrap1.takeDamage(0);
 	diamondTrap1.beRepaired(10);

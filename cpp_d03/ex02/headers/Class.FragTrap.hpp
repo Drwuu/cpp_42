@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:51:02 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/23 18:31:18 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/01 15:18:45 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class FragTrap : public ClapTrap
 
 	public:
 		/* constructors*/
-		FragTrap(void);
+		FragTrap();
 		FragTrap(std::string name);
 		FragTrap(FragTrap const &src);
 		~FragTrap();

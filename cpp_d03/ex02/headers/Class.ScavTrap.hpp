@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:51:02 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/23 18:11:42 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/01 15:18:50 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class ScavTrap : public ClapTrap
 
 	public:
 		/* constructors*/
-		ScavTrap(void);
+		ScavTrap();
 		ScavTrap(std::string name);
 		ScavTrap(ScavTrap const &src);
 		~ScavTrap();
