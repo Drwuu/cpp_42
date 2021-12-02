@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:58:20 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/27 11:03:55 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/02 12:13:01 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ Bureaucrat::Bureaucrat(): _name("Default"), _grade(minGrade)
 }
 Bureaucrat::Bureaucrat(std::string const &name, int grade): _name(name), _grade(grade)
 {
-	if (_grade < maxGrade)
+	if (_grade < (int)maxGrade)
 		throw GradeTooHighException();
-	if (_grade > minGrade)
+	if (_grade > (int)minGrade)
 		throw GradeTooLowException();
 }
 Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src._name), _grade(src._grade)
@@ -36,7 +36,7 @@ Bureaucrat::~Bureaucrat()
 }
 
 /* getters and setters */
-std::string	Bureaucrat::getName() const
+std::string const	Bureaucrat::getName() const
 {
 	return _name;
 }

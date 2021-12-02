@@ -35,7 +35,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 }
 
 /* member functions */
-void	RobotomyRequestForm::executeForm(Bureaucrat const &executor) const
+void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	AForm::execute(executor);
 	srand(time(NULL));

@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 14:59:09 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/29 16:50:06 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/02 13:14:48 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 }
 
 /* member functions */
-void	ShrubberyCreationForm::executeForm(Bureaucrat const &executor) const
+void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	std::ofstream	out;
 

@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:58:20 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/27 14:31:28 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/02 12:39:24 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Bureaucrat::~Bureaucrat()
 }
 
 /* getters and setters */
-std::string	Bureaucrat::getName() const
+std::string	const	Bureaucrat::getName() const
 {
 	return _name;
 }
@@ -65,7 +65,8 @@ void	Bureaucrat::signForm(Form &form)
 	try
 	{
 		form.beSigned(*this);
-		std::cout << _name << " signs " << form.getName() << " of grade " << form.getGrade() << std::endl;
+		std::cout << _name << " signs " << form.getName() << " of signed grade " << form.getSignedGrade() <<
+		" and of execution grade " << form.getExecGrade() << std::endl;
 	}
 	catch (Form::GradeTooHighException &e)
 	{

@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:58:18 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/27 20:58:01 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/02 12:43:04 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int main()
 
 		// Bureaucrat	boss2("Boss2", 151);
 
-		Form	form("complicated form", 10);
+		Form	form("complicated form", 10, 20);
 		std::cout << form << std::endl;
 		std::cout << random << std::endl;
 		std::cout << boss << std::endl;

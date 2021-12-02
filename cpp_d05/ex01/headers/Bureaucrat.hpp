@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:58:23 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/27 14:40:28 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/02 12:19:58 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Bureaucrat
 		virtual	~Bureaucrat();
 
 		/* getters and setters */
-		std::string 		getName() const;
+		std::string const	getName() const;
 		int const			&getGrade() const;
 
 		/* member functions */

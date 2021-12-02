@@ -22,7 +22,8 @@ class Form
 	private:
 		/* attributes */
 		std::string const	_name;
-		int			const	_grade;
+		int			const	_gradeSign;
+		int			const	_gradeExec;
 		bool				_signed;
 
 	public:
@@ -32,13 +33,14 @@ class Form
 
 		/* constructors */
 		Form();
-		Form(std::string const &name, int grade);
+		Form(std::string const &name, int signedGrade, int execGrade);
 		Form(Form const &src);
 		virtual	~Form();
 
 		/* getters and setters */
 		std::string	getName() const;
-		int const	&getGrade() const;
+		int const	&getSignedGrade() const;
+		int const	&getExecGrade() const;
 		bool		&getSigned();
 
 		/* member functions */

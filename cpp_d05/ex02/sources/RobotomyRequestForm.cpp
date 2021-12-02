@@ -35,13 +35,13 @@ RobotomyRequestForm::~RobotomyRequestForm()
 }
 
 /* member functions */
-void	RobotomyRequestForm::executeForm(Bureaucrat const &executor) const
+void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-	AForm::executeForm(executor);
+	AForm::execute(executor);
 	srand(time(NULL));
 	int randomNb = rand() % 2;
+	std::cout << executor.getName() << " try to executes " << AForm::getName() << std::endl;
 	std::cout << "Bzzzz bzzzz " << std::endl;
-	std::cout << executor.getName() << " executes " << AForm::getName() << std::endl;
 	if (randomNb)
 		std::cout << executor.getName() << " has robotomized <" << _target << "> " << std::endl;
 	else

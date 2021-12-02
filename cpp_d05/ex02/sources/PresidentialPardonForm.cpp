@@ -35,10 +35,10 @@ PresidentialPardonForm::~PresidentialPardonForm()
 }
 
 /* member functions */
-void	PresidentialPardonForm::executeForm(Bureaucrat const &executor) const
+void	PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	std::cout << executor.getName() << " executes " << AForm::getName() << std::endl;
-	AForm::executeForm(executor);
+	std::cout << executor.getName() << " try to executes " << AForm::getName() << std::endl;
+	AForm::execute(executor);
 	std::cout << "<" << _target << "> has been forgiven by Zafod Beeblebrox" << std::endl;
 }
 

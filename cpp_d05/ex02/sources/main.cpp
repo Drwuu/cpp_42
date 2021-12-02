@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:58:18 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/27 20:57:07 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/02 13:04:25 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,9 @@ int main()
 		boss.executeForm(*form);
 		boss.signForm(*form);
 		boss.executeForm(*form);
+		std::cout << "Downgrading " << boss << " by 50" << std::endl;
 		boss.downGrade(50);
+		std::cout << boss << std::endl;
 		boss.executeForm(*form);
 		delete form;
 	}
