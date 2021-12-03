@@ -6,10 +6,11 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 19:37:05 by lwourms           #+#    #+#             */
-/*   Updated: 2021/11/30 20:55:17 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/03 15:54:29 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <__functional_base>
 #include <cstddef>
 #include <iostream>
 #include <cstdlib>
@@ -45,6 +46,8 @@ void	identify(Base *p)
 		std::cout << "B" << std::endl;
 	else if ((c = dynamic_cast<C *>(p)))
 		std::cout << "C" << std::endl;
+	if (!a || !b || !c)
+		return ;
 }
 void	identify(Base &p)
 {
