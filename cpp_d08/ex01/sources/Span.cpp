@@ -6,7 +6,7 @@
 /*   By: lwourms <lwourms@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:07:08 by lwourms           #+#    #+#             */
-/*   Updated: 2021/12/09 15:59:49 by lwourms          ###   ########.fr       */
+/*   Updated: 2021/12/09 19:50:07 by lwourms          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ Span	&Span::operator=(Span const &src)
 {
 	_N = src._N;
 	_vector.clear();
-	_vector.assign(src._vector.begin(), src._vector.end());
+	_vector.insert(_vector.begin(), src._vector.begin(), src._vector.end());
 	return *this;
 }
 std::ostream	&operator<<(std::ostream &o, Span &src)
